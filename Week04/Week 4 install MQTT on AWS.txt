@@ -1,0 +1,12 @@
+Week 4 install MQTT on AWS
+
+sudo amazon-linux-extras install -y epel
+sudo yum install -y mosquitto
+
+Start mosquitto service and enable it
+sudo systemctl start mosquitto
+sudo systemctl enable mosquitto
+
+Test the installation (two terminals are needed)
+mosquitto_sub -h localhost -t "test" => Do this on terminal 1
+mosquitto_pub -h localhost -t test -m "hello world" => Do this on terminal 2
